@@ -3,14 +3,19 @@ import AppRoutes from "./Routes/AppRoutes";
 import "swiper/css";
 import "swiper/css/navigation";
 
+import {CartContextProvider } from "./Context/CartContext";
+
 
 
 function App() {
   return (
-    <div className="App">
-        <Navbar/>
-        <AppRoutes></AppRoutes>
-    </div>
+    <CartContextProvider>
+      <div className="App">
+          <Navbar/>
+          <AppRoutes></AppRoutes>
+      </div>
+    </CartContextProvider>
+
   );
 }
 
