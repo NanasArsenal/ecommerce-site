@@ -10,8 +10,9 @@ const Navbar = () => {
     const handleClick =() => setNav(!nav)
 
     const Cartcont = useContext(CartContext);
-    const items = ["fugu","banku","gucci","prada"];
     console.log(Cartcont.cartitems.length)
+    console.log(Cartcont.cartitems);
+
  
 
   return (

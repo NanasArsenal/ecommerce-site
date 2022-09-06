@@ -4,7 +4,7 @@ import React,{createContext,useState} from 'react'
 const CartContext = createContext()
 
 const CartContextProvider = ({children}) => {
-    const [cartitems,setCartitems]   = useState(["apple","yam"]);
+    const [cartitems,setCartitems]   = useState([]);
 
   return (
     <CartContext.Provider value={{cartitems,setCartitems}}>

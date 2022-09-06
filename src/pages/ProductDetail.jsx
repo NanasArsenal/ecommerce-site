@@ -2,10 +2,28 @@ import { Card } from '@mui/material';
 import React from 'react'
 import { useLocation } from 'react-router-dom';
 import ShoppingBagOutlined from '@mui/icons-material/ShoppingBagOutlined';
+import { useContext } from 'react';
+import { CartContext } from '../Context/CartContext';
 
 const ProductDetail = () => {
     const location = useLocation();
     const data = location.state;
+    
+    const Cartcont = useContext(CartContext);
+
+    //destructure
+    const cartitems = Cartcont.cartitems;
+    
+
+
+    // const AddProduct=(e)=>{
+    //     e.preventDefault();
+    //     Cartcont.setCartitems([data])
+    //     console.log(Cartcont.cartitems)
+        
+    // }
+
+    
   return (
     <Card className='text-4xl  mt-10'>
       <div className='flex'>
@@ -22,7 +40,7 @@ const ProductDetail = () => {
             </div>
 
             <div>
-                <button>
+                <button onClick={()=>Cartcont.setCartitems((oldArray) => oldArray.concat(data))}>
                     <div className='border border-1 border-slate-700 w-[400px] h-[70px] mt-10 text-lg flex justify-center pt-6'>
                         <p><span><ShoppingBagOutlined/></span> Add product to Cart</p>
                     </div>
