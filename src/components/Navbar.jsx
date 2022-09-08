@@ -11,7 +11,7 @@ const Navbar = () => {
 
     const Cartcont = useContext(CartContext);
     console.log(Cartcont.cartitems.length)
-    console.log(Cartcont.cartitems);
+    console.log(Cartcont.cartitems)
 
  
 

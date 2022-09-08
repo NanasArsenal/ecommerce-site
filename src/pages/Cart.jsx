@@ -7,6 +7,9 @@ const Cart = () => {
     
   const Cartcont = useContext(CartContext);
 
+    const myitems =JSON.parse(localStorage.getItem(''))
+    console.log(myitems)
+
 
   return (
     <div className='w-full py-10 px-10   bg-slate-100  grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5 grid-rows-3 '>

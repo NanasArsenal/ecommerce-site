@@ -16,14 +16,12 @@ const ProductDetail = () => {
     
 
 
-    // const AddProduct=(e)=>{
-    //     e.preventDefault();
-    //     Cartcont.setCartitems([data])
-    //     console.log(Cartcont.cartitems)
-        
-    // }
+    const AddProduct=(e)=>{
+        e.preventDefault();
+        Cartcont.setCartitems((oldArray) => oldArray.concat(data))        
+    }
 
-    
+
   return (
     <Card className='text-4xl  mt-10'>
       <div className='flex'>
@@ -40,7 +38,7 @@ const ProductDetail = () => {
             </div>
 
             <div>
-                <button onClick={()=>Cartcont.setCartitems((oldArray) => oldArray.concat(data))}>
+                <button onClick={AddProduct}>
                     <div className='border border-1 border-slate-700 w-[400px] h-[70px] mt-10 text-lg flex justify-center pt-6'>
                         <p><span><ShoppingBagOutlined/></span> Add product to Cart</p>
                     </div>
