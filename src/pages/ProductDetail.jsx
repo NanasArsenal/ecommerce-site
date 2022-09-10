@@ -23,31 +23,30 @@ const ProductDetail = () => {
 
 
   return (
-    <Card className='text-4xl  mt-10'>
-      <div className='flex'>
-        <div className='h-full px-[300px] '>
-            <img src={data.image} alt="" className='h-[400px] '/>
-            <p>{data.item}</p>
-        </div>
-        <div className='details'>
-            <div className='sizes flex w-[500px] justify-evenly'>
-                <label htmlFor="xl">XL</label><input type="checkbox" name="xl" id="" />
-                <label htmlFor="l">L</label><input type="checkbox" name="l" id="" />
-                <label htmlFor="m">M</label><input type="checkbox" name="m" id="" />
-                <label htmlFor="s">S</label><input type="checkbox" name="s" id="" />
-            </div>
+    <div className='w-full flex justify-center '>
+        <Card className='text-4xl mt-10 px-5 lg:w-[1000px] '>
+            <div className='grid grid-cols-1 md:grid-cols-2 py-[100px] justify-between '>
 
-            <div>
-                <button onClick={AddProduct}>
-                    <div className='border border-1 border-slate-700 w-[400px] h-[70px] mt-10 text-lg flex justify-center pt-6'>
-                        <p><span><ShoppingBagOutlined/></span> Add product to Cart</p>
+                <div className='h-full px-[10px]   '>
+                    <img src={data.image} alt="" className='h-[400px] '/>
+                </div>
+
+                <div className='details '>
+                    <p className='text-left'>{data.item}</p>
+            
+
+                    <div>
+                        <button onClick={AddProduct}>
+                            <div className='border border-1 border-slate-700 w-[350px] h-[70px] mt-10 text-lg flex justify-center pt-6'>
+                                <p><span><ShoppingBagOutlined/></span> Add product to Cart</p>
+                            </div>
+                        </button>
                     </div>
-                </button>
-            </div>
 
-        </div>
-     </div>
-    </Card>
+                </div>
+            </div>
+        </Card>
+    </div>
   )
 }
 

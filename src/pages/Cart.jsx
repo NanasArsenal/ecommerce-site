@@ -18,10 +18,11 @@ const Cart = () => {
 
           return  <Card key={cartitem.id}>
           <div>
-              <img src={cartitem.image} alt="" className='h-[450px] w-full p-2 '/>
+              <img src={cartitem.image} alt="" className='h-[300px] md:h-[350px] w-full p-2 '/>
           </div>
-          <div className='p-2 px-3 flex justify-between'>
-              {cartitem.item}
+          <div className='p-2 px-3 flex justify-between pr-[20px] '>
+                  <p className='text-[15px] '> {cartitem.item}</p>
+                  <p className='text-[20px] font-semi-bold'>{cartitem.price} </p>
           </div>
       </Card>
           })}

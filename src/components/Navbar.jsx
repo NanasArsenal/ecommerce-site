@@ -58,23 +58,26 @@ const Navbar = () => {
                 
 
                         {/*Haamburger*/}
-                <div onClick={handleClick} className='md:hidden z-10 cursor-pointer flex mt-6'>
-                    {!nav ? <FaBars className='mr-5 mt-1'/> : <FaTimes className='mr-5 mt-1'/>}
+                <div className='md:hidden z-10 cursor-pointer flex mt-6'>
+                    <div onClick={handleClick} >
+                        {!nav ? <FaBars className='mr-5 mt-1'/> : <FaTimes className='mr-5 mt-1'/>}
+                    </div>
                     <div className='px-3'>
-                        <ShoppingBagOutlinedIcon className='absolute'/>
-                        <p className={Cartcont.cartitems.length !== 0 ? 'relative ml-4 my-2 bg-black text-[15px] text-slate-50 px-2 rounded-2xl' : 'hidden'}>{Cartcont.cartitems.length}</p>            
+                        <Link to={'cart'}><ShoppingBagOutlinedIcon className='absolute'/></Link>
+
+                            <p className={Cartcont.cartitems.length !== 0 ? 'relative ml-4 my-2 bg-black text-[15px] text-slate-50 px-2 rounded-2xl' : 'hidden'}>{Cartcont.cartitems.length}</p>            
                     </div>
                 </div>
 
                 {/**Mobile Menu */}
                 <ul className={!nav ? 'hidden':' absolute top-0 left-0 w-full h-screen bg-slate-200  flex flex-col justify-center items-center'}>
-                    <Link to={'/'} onClick={nav}>
+                    <Link to={'/'} >
                     <li className='py-6 text-4xl'>New Arrivals</li></Link>
-                    <Link to={'men'} onClick={nav}>
+                    <Link to={'men'} >
                     <li className='py-6 text-4xl'>Men</li></Link>
-                    <Link to={'women'} onClick={nav}>
+                    <Link to={'women'} >
                     <li className='py-6 text-4xl'>Women</li></Link>
-                    <Link to={'children'} onClick={nav}>
+                    <Link to={'children'} >
                     <li className='py-6 text-4xl'>Children</li></Link>
                 </ul>
             

@@ -30,7 +30,7 @@ const Women = () => {
                             <Link to={'/product'} state={woman}>
                                 <Card key={woman.id}>
                                     <div>
-                                        <img src={woman.image} alt="" className='h-[450px] w-full p-2 '/>
+                                        <img src={woman.image} alt="" className='h-[300px] md:h-[350px] w-full p-2 '/>
                                     </div>
                                     <div className='p-2 px-3 flex justify-between'>
                                         {woman.item}
