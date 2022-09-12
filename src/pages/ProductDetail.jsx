@@ -1,3 +1,5 @@
+///create an array and push prduct prices to the array, then sum the member
+
 import { Card } from '@mui/material';
 import React from 'react'
 import { useLocation } from 'react-router-dom';

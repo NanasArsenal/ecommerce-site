@@ -1,8 +1,5 @@
 import React from 'react'
 import Card from '../components/shared/Card'
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import  { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper";
@@ -10,22 +7,22 @@ import { Link } from 'react-router-dom';
 
 const Arrivals = () => {
 
-    const [liked, setLiked] = useState(false);
-    const selectFavorite= (e)=>{
-            e.preventDefault();
-            setLiked(!liked)
-    }
+    // const [liked, setLiked] = useState(false);
+    // const selectFavorite= (e)=>{
+    //         e.preventDefault();
+    //         setLiked(!liked)
+    // }
     const newarrivals = [
-        {id:1,item: "Calvin Klein Jumpers", price:"$50", image:"https://imgs.search.brave.com/VbMSmL7WPdioN0vUBLak0bI1u-jhPanjJjKJSQovFyk/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9tZWRp/YS5tZW5uYWNlLmNv/bS9zL21lbm5hY2Uv/TVc0MDkwMzNfc2V0/LzMvb3JhbmdlLWNy/ZXctbmVjay1qdW1w/ZXIuanBnPyRwcm9k/dWN0LXBhZ2VfX3pv/b20tLTJ4JA", subImages:{img1:"https://images.vestiairecollective.com/cdn-cgi/image/w=500,h=500,q=80,f=auto,https://images.vestiairecollective.com/cdn-cgi/image//produit/blue-cotton-elasthane-balmain-jeans-10012429-2_1.jpg",img2:"https://images.vestiairecollective.com/cdn-cgi/image/w=500,h=500,q=80,f=auto,https://images.vestiairecollective.com/cdn-cgi/image//produit/blue-cotton-elasthane-balmain-jeans-10012429-2_1.jpg" } },
-        {id:2, item: "Balmain Jeans (Ripped Edition Size 8) ", price:"$100", image:"https://images.vestiairecollective.com/cdn-cgi/image/w=500,h=500,q=80,f=auto,https://images.vestiairecollective.com/cdn-cgi/image//produit/blue-cotton-elasthane-balmain-jeans-10012429-1_1.jpg"},
-        {id:3, item: "Old Navy Blazer", price:"$150", image:"https://n.nordstrommedia.com/id/sr3/55fcd13a-2a10-4928-9285-47716bad2788.jpeg?h=365&w=240&dpr=2",  },
-        {id:4, item: "Nike Joggers", price:"$50", image:"https://www.sportsdirect.com/images/products/48100003_l.jpg"},
+        {id:1,item: "Calvin Klein Jumpers", price:"50", image:"https://imgs.search.brave.com/VbMSmL7WPdioN0vUBLak0bI1u-jhPanjJjKJSQovFyk/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9tZWRp/YS5tZW5uYWNlLmNv/bS9zL21lbm5hY2Uv/TVc0MDkwMzNfc2V0/LzMvb3JhbmdlLWNy/ZXctbmVjay1qdW1w/ZXIuanBnPyRwcm9k/dWN0LXBhZ2VfX3pv/b20tLTJ4JA", subImages:{img1:"https://images.vestiairecollective.com/cdn-cgi/image/w=500,h=500,q=80,f=auto,https://images.vestiairecollective.com/cdn-cgi/image//produit/blue-cotton-elasthane-balmain-jeans-10012429-2_1.jpg",img2:"https://images.vestiairecollective.com/cdn-cgi/image/w=500,h=500,q=80,f=auto,https://images.vestiairecollective.com/cdn-cgi/image//produit/blue-cotton-elasthane-balmain-jeans-10012429-2_1.jpg" } },
+        {id:2, item: "Balmain Jeans (Ripped Edition Size 8) ", price:"100", image:"https://images.vestiairecollective.com/cdn-cgi/image/w=500,h=500,q=80,f=auto,https://images.vestiairecollective.com/cdn-cgi/image//produit/blue-cotton-elasthane-balmain-jeans-10012429-1_1.jpg"},
+        {id:3, item: "Old Navy Blazer", price:"150", image:"https://n.nordstrommedia.com/id/sr3/55fcd13a-2a10-4928-9285-47716bad2788.jpeg?h=365&w=240&dpr=2",  },
+        {id:4, item: "Nike Joggers", price:"50", image:"https://www.sportsdirect.com/images/products/48100003_l.jpg"},
         {id:5, item: "Victoria Secret Bikini",price:"$40", image:"http://dress-trends.com/wp-content/uploads/2016/01/Victorias-Secret-New-swimwear-collection-Spring-Summer-2016-29.jpg",  },
-        {id:6, item: "Dashiki Blouse", price:"$50", image:"https://i.pinimg.com/originals/28/14/53/28145316d4f875b2b0820075f30fc601.jpg", },
-        {id:7, item: "Adidas Joggers-Baggy", price:"$50", image:"https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/2ef52406a6a34a3881d1ae4a013d0f90_9366/adicolor-3-stripes-cargo-tracksuit-bottoms.jpg" },
-        {id:8, item: "Victoria Secret Bikini", price:"$50", image:"https://m.media-amazon.com/images/I/71TK0bfRXkL._MCnd_AC_UL320_.jpg",  },
-        {id:9, item: "Summer Joggers", price:"$50", image:"https://i.pinimg.com/736x/96/99/d9/9699d9f7d73cbe67125df4653f92430d.jpg"},
-        {id:10, item: "Victoria Secret Bikini", price:"$50", image:"http://dress-trends.com/wp-content/uploads/2016/01/Victorias-Secret-New-swimwear-collection-Spring-Summer-2016-29.jpg",  },
+        {id:6, item: "Dashiki Blouse", price:"50", image:"https://i.pinimg.com/originals/28/14/53/28145316d4f875b2b0820075f30fc601.jpg", },
+        {id:7, item: "Adidas Joggers-Baggy", price:"50", image:"https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/2ef52406a6a34a3881d1ae4a013d0f90_9366/adicolor-3-stripes-cargo-tracksuit-bottoms.jpg" },
+        {id:8, item: "Victoria Secret Bikini", price:"50", image:"https://m.media-amazon.com/images/I/71TK0bfRXkL._MCnd_AC_UL320_.jpg",  },
+        {id:9, item: "Summer Joggers", price:"50", image:"https://i.pinimg.com/736x/96/99/d9/9699d9f7d73cbe67125df4653f92430d.jpg"},
+        {id:10, item: "Victoria Secret Bikini", price:"50", image:"http://dress-trends.com/wp-content/uploads/2016/01/Victorias-Secret-New-swimwear-collection-Spring-Summer-2016-29.jpg",  },
 
     ]
   return (
@@ -46,7 +43,7 @@ const Arrivals = () => {
                                     </div>
                                     <div className='p-2 px-3 flex justify-between pr-[20px] '>
                                        <p className='text-[15px] '> {arrivals.item}</p>
-                                       <p className='text-[20px] font-semi-bold'>{arrivals.price} </p>
+                                       <p className='text-[20px] font-semi-bold'>${arrivals.price} </p>
                                     </div>
                                 </Card>
                             </Link>
