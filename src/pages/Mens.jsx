@@ -11,9 +11,9 @@ const Mens = () => {
           setLiked(!liked)
   }
   const mens = [
-    {id:1, item: "Calvin Klein Jumpers", image:"https://imgs.search.brave.com/VbMSmL7WPdioN0vUBLak0bI1u-jhPanjJjKJSQovFyk/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9tZWRp/YS5tZW5uYWNlLmNv/bS9zL21lbm5hY2Uv/TVc0MDkwMzNfc2V0/LzMvb3JhbmdlLWNy/ZXctbmVjay1qdW1w/ZXIuanBnPyRwcm9k/dWN0LXBhZ2VfX3pv/b20tLTJ4JA"},
-    {id:2, item: "Balmain Jeans", image:"https://cdna.lystit.com/photos/balmain/585ab0ea/balmain-Blue-Slim-cut-Ripped-Blue-Cotton-Jeans.jpeg"},
-    {id:3, item: "Old Navy Blazer", image:"https://cdna.lystit.com/photos/oldnavy/e1fa4122/old-navy-Houndstooth-Quilted-Sweater-fleece-Bomber-Jacket.jpeg"},
+    {id:1, item: "Calvin Klein Jumpers", price:"50", image:"https://imgs.search.brave.com/VbMSmL7WPdioN0vUBLak0bI1u-jhPanjJjKJSQovFyk/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9tZWRp/YS5tZW5uYWNlLmNv/bS9zL21lbm5hY2Uv/TVc0MDkwMzNfc2V0/LzMvb3JhbmdlLWNy/ZXctbmVjay1qdW1w/ZXIuanBnPyRwcm9k/dWN0LXBhZ2VfX3pv/b20tLTJ4JA"},
+    {id:2, item: "Balmain Jeans", price:"50", image:"https://cdna.lystit.com/photos/balmain/585ab0ea/balmain-Blue-Slim-cut-Ripped-Blue-Cotton-Jeans.jpeg"},
+    {id:3, item: "Old Navy Blazer", price:"50", image:"https://cdna.lystit.com/photos/oldnavy/e1fa4122/old-navy-Houndstooth-Quilted-Sweater-fleece-Bomber-Jacket.jpeg"},
 ]
   return (
     <div className='bg-slate-50'>
@@ -29,10 +29,8 @@ const Mens = () => {
                                         <img src={men.image} alt="" className='h-[300px] md:h-[350px] w-full p-2 '/>
                                     </div>
                                     <div className='p-2 px-3 flex justify-between'>
-                                        {men.item}
-                                        <button onClick={selectFavorite}>
-                                            {!liked? <FavoriteBorderOutlinedIcon/>:<FavoriteOutlinedIcon/>}
-                                        </button>
+                                        <p className='text-[15px] '>{men.item}</p>
+                                        <p className='text-[15px] '>${men.price}</p>
                                     </div>
                                 </Card>
                             </Link>

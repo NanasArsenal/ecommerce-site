@@ -35,7 +35,7 @@ const ProductDetail = () => {
 
                 <div className='details '>
                     <p className='text-left'>{data.item}</p>
-            
+                    <p className='text-left mt-4'>($ {data.price})</p>
 
                     <div>
                         <button onClick={AddProduct}>

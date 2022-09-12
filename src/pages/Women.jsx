@@ -11,12 +11,12 @@ const Women = () => {
           setLiked(!liked)
   }
   const women = [
-    {id:5, item: "Victoria Secret Bikini", image:"http://dress-trends.com/wp-content/uploads/2016/01/Victorias-Secret-New-swimwear-collection-Spring-Summer-2016-29.jpg"},
-    {id:6, item: "Dashiki Blouse", image:"https://i.pinimg.com/originals/28/14/53/28145316d4f875b2b0820075f30fc601.jpg"},
-    {id:7, item: "Summer Joggers", image:"https://i.pinimg.com/736x/96/99/d9/9699d9f7d73cbe67125df4653f92430d.jpg"},
-    {id:8, item: "Victoria Secret Bikini", image:"http://dress-trends.com/wp-content/uploads/2016/01/Victorias-Secret-New-swimwear-collection-Spring-Summer-2016-29.jpg"},
-    {id:9, item: "Summer Joggers", image:"https://i.pinimg.com/736x/96/99/d9/9699d9f7d73cbe67125df4653f92430d.jpg"},
-    {id:10, item: "Victoria Secret Bikini", image:"http://dress-trends.com/wp-content/uploads/2016/01/Victorias-Secret-New-swimwear-collection-Spring-Summer-2016-29.jpg"},
+    {id:5, item: "Victoria Secret Bikini", price:"50", image:"http://dress-trends.com/wp-content/uploads/2016/01/Victorias-Secret-New-swimwear-collection-Spring-Summer-2016-29.jpg"},
+    {id:6, item: "Dashiki Blouse", price:"50", image:"https://i.pinimg.com/originals/28/14/53/28145316d4f875b2b0820075f30fc601.jpg"},
+    {id:7, item: "Summer Joggers", price:"50", image:"https://i.pinimg.com/736x/96/99/d9/9699d9f7d73cbe67125df4653f92430d.jpg"},
+    {id:8, item: "Victoria Secret Bikini", price:"50", image:"http://dress-trends.com/wp-content/uploads/2016/01/Victorias-Secret-New-swimwear-collection-Spring-Summer-2016-29.jpg"},
+    {id:9, item: "Summer Joggers", price:"50", image:"https://i.pinimg.com/736x/96/99/d9/9699d9f7d73cbe67125df4653f92430d.jpg"},
+    {id:10, item: "Victoria Secret Bikini", price:"50", image:"http://dress-trends.com/wp-content/uploads/2016/01/Victorias-Secret-New-swimwear-collection-Spring-Summer-2016-29.jpg"},
 
 ]
   return (
@@ -33,10 +33,8 @@ const Women = () => {
                                         <img src={woman.image} alt="" className='h-[300px] md:h-[350px] w-full p-2 '/>
                                     </div>
                                     <div className='p-2 px-3 flex justify-between'>
-                                        {woman.item}
-                                        <button onClick={selectFavorite}>
-                                            {!liked? <FavoriteBorderOutlinedIcon/>:<FavoriteOutlinedIcon/>}
-                                        </button>
+                                        <p className='text-[15px] '>{woman.item}</p>
+                                        <p className='text-[15px] '>${woman.price}</p>
                                     </div>
                                 </Card>
                             </Link>

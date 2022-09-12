@@ -48,7 +48,7 @@ const Cart = () => {
 
   return (
     <div className='flex flex-col md:flex-row'>
-        <div className='overflow-y-auto h-auto w-full py-10 px-10 mr-10 bg-slate-100  grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5 grid-rows-3 hidden md:grid'>
+        <div className='md:overflow-y-auto h-auto w-full py-10 px-10 mr-10 bg-slate-100  grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 grid-rows-3 hidden md:grid'>
           {Cartcont.cartitems.map((cartitem) =>{
 
           return  <Card key={cartitem.id} >
@@ -60,7 +60,7 @@ const Cart = () => {
           </div>
           <div className='p-2 px-3 flex justify-between pr-[20px] '>
                   <p className='text-[15px] '> {cartitem.item}</p>
-                  <p className='text-[20px] font-semi-bold'>{cartitem.price} </p>
+                  <p className='text-[20px] font-semi-bold'>$ {cartitem.price} </p>
           </div>
            </Card>
           })}
@@ -68,26 +68,32 @@ const Cart = () => {
 
 
 {/* check out list */}
-       <div className=' shadow-xl h-full px-2 py-3 '>
+       <div className=' shadow-xl h-full px-2 py-3 w-full '>
+          <h2 className='font-bold text-2xl'>My Cart</h2>
           <div>
             {
               Cartcont.cartitems.map((cartitem) =>{
                 return(
                   <Card>
                     <div>
-                      <li>{cartitem.item} </li>
+                      <ul className=' list-none '>
+                        <li className='flex h-[70px] '>
+                          <img src={cartitem.image} alt="" className='w-10 mx-10'/>
+                          <p>{cartitem.item} </p>
+                        </li>
+                      </ul>
                     </div>
                   </Card>
                 )
               })
             }
           </div>
-          <div>
-            <p>Total :$ {TotalPrice(array)} </p>
+          <div className='mt-[100px] '>
+            <p className='text-2xl'>Total : $ <span className='font-bold'>{TotalPrice(array)}</span> </p>
           </div>
           <button>
-                  <div className='border sm:ml-10 md:ml-0 border-1 border-slate-700  w-[250px] md:w-[400px]  h-[70px] mt-10 text-lg flex justify-center align-middle pt-6'>
-                          <p> Checkout</p>
+                  <div className='border border-1 border-slate-700 sm:pl-2  w-full px-[150px] md:px-[300px]  h-[70px] mt-10 text-lg pt-6'>
+                          <p className='text-center sm:ml-[150px] '> Checkout</p>
                   </div>
           </button>
         </div> 

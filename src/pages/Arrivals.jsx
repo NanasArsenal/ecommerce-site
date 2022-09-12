@@ -17,7 +17,7 @@ const Arrivals = () => {
         {id:2, item: "Balmain Jeans (Ripped Edition Size 8) ", price:"100", image:"https://images.vestiairecollective.com/cdn-cgi/image/w=500,h=500,q=80,f=auto,https://images.vestiairecollective.com/cdn-cgi/image//produit/blue-cotton-elasthane-balmain-jeans-10012429-1_1.jpg"},
         {id:3, item: "Old Navy Blazer", price:"150", image:"https://n.nordstrommedia.com/id/sr3/55fcd13a-2a10-4928-9285-47716bad2788.jpeg?h=365&w=240&dpr=2",  },
         {id:4, item: "Nike Joggers", price:"50", image:"https://www.sportsdirect.com/images/products/48100003_l.jpg"},
-        {id:5, item: "Victoria Secret Bikini",price:"$40", image:"http://dress-trends.com/wp-content/uploads/2016/01/Victorias-Secret-New-swimwear-collection-Spring-Summer-2016-29.jpg",  },
+        {id:5, item: "Victoria Secret Bikini",price:"40", image:"http://dress-trends.com/wp-content/uploads/2016/01/Victorias-Secret-New-swimwear-collection-Spring-Summer-2016-29.jpg",  },
         {id:6, item: "Dashiki Blouse", price:"50", image:"https://i.pinimg.com/originals/28/14/53/28145316d4f875b2b0820075f30fc601.jpg", },
         {id:7, item: "Adidas Joggers-Baggy", price:"50", image:"https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/2ef52406a6a34a3881d1ae4a013d0f90_9366/adicolor-3-stripes-cargo-tracksuit-bottoms.jpg" },
         {id:8, item: "Victoria Secret Bikini", price:"50", image:"https://m.media-amazon.com/images/I/71TK0bfRXkL._MCnd_AC_UL320_.jpg",  },
