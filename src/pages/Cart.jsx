@@ -8,8 +8,8 @@ const Cart = () => {
     
   const Cartcont = useContext(CartContext);
 
-    const myitems =JSON.parse(localStorage.getItem(''))
-    console.log(myitems)
+    // const myitems =JSON.parse(localStorage.getItem(''))
+    // console.log(myitems)
 
     const cartitems = Cartcont.cartitems;
    
@@ -39,12 +39,9 @@ const Cart = () => {
     return sum; 
    }
  
-  //total price calculation
-  //  const Total = cartitems.map((cartitem)=>{
-  //     let initialprice = 0;
-  //     let pricesum;
-  //     return   pricesum = initialprice + parseInt(cartitem.price);
-  //  } )
+  //checkout payments will go here
+
+  
 
   return (
     <div className='flex flex-col md:flex-row'>
@@ -77,9 +74,14 @@ const Cart = () => {
                   <Card>
                     <div>
                       <ul className=' list-none '>
-                        <li className='flex h-[70px] '>
-                          <img src={cartitem.image} alt="" className='w-10 mx-10'/>
-                          <p>{cartitem.item} </p>
+                        <li className='flex h-[70px] justify-between '>
+                          
+                            <div className='flex'>
+                              <img src={cartitem.image} alt="" className='w-10 mx-10'/>
+                              <p>{cartitem.item} ~ ($ {cartitem.price}) </p>
+                            </div>
+                            
+                           
                         </li>
                       </ul>
                     </div>
@@ -89,7 +91,7 @@ const Cart = () => {
             }
           </div>
           <div className='mt-[100px] '>
-            <p className='text-2xl'>Total : $ <span className='font-bold'>{TotalPrice(array)}</span> </p>
+            <p className='text-2xl flex '>Total :  <span className='ml-[100px] font-bold'>$ {TotalPrice(array)}</span> </p>
           </div>
           <button>
                   <div className='border border-1 border-slate-700 sm:pl-2  w-full px-[150px] md:px-[300px]  h-[70px] mt-10 text-lg pt-6'>
