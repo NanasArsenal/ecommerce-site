@@ -41,7 +41,7 @@ const Cart = () => {
  
   //checkout payments will go here
 
-  
+
 
   return (
     <div className='flex flex-col md:flex-row'>
@@ -64,7 +64,7 @@ const Cart = () => {
         </div>
 
 
-{/* check out list */}
+  {/* check out list */}
        <div className=' shadow-xl h-full px-2 py-3 w-full '>
           <h2 className='font-bold text-2xl'>My Cart</h2>
           <div>
@@ -74,14 +74,11 @@ const Cart = () => {
                   <Card>
                     <div>
                       <ul className=' list-none '>
-                        <li className='flex h-[70px] justify-between '>
-                          
+                          <li className='flex h-[70px] justify-between '>
                             <div className='flex'>
-                              <img src={cartitem.image} alt="" className='w-10 mx-10'/>
-                              <p>{cartitem.item} ~ ($ {cartitem.price}) </p>
-                            </div>
-                            
-                           
+                                <img src={cartitem.image} alt="" className='w-10 mx-10'/>
+                                <p>{cartitem.item} ~ ($ {cartitem.price}) </p>
+                            </div> 
                         </li>
                       </ul>
                     </div>
