@@ -13,8 +13,6 @@ const ProductDetail = () => {
     
     const Cartcont = useContext(CartContext);
 
-    //destructure
-    const cartitems = Cartcont.cartitems;
     
 
 

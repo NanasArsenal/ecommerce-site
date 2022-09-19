@@ -71,14 +71,14 @@ const Navbar = () => {
 
                 {/**Mobile Menu */}
                 <ul className={!nav ? 'hidden':' absolute top-0 left-0 w-full h-screen bg-slate-200  flex flex-col justify-center items-center'}>
-                    <Link to={'/'} >
+                    <Link to={'/'}>
                     <li className='py-6 text-4xl'>New Arrivals</li></Link>
-                    <Link to={'men'} >
-                    <li className='py-6 text-4xl'>Men</li></Link>
-                    <Link to={'women'} >
-                    <li className='py-6 text-4xl'>Women</li></Link>
+                    <Link to={'men'}>
+                    <li className='py-6 text-4xl' >Men</li></Link>
+                    <Link to={'women'}>
+                    <li className='py-6 text-4xl' >Women</li></Link>
                     <Link to={'children'} >
-                    <li className='py-6 text-4xl'>Children</li></Link>
+                    <li className='py-6 text-4xl' >Children</li></Link>
                 </ul>
             
 

@@ -1,12 +1,14 @@
-import React,{useContext} from 'react'
+import React,{useContext,useState} from 'react'
 import { CartContext } from '../Context/CartContext';
 import Card from '../components/shared/Card';
-import { InsertInvitation } from '@mui/icons-material';
+import PaystackPop from '@paystack/inline-js';
+import swal from 'sweetalert';
 
 
 const Cart = () => {
     
   const Cartcont = useContext(CartContext);
+  const [openModal,setOpenModal]= useState(false)
 
     // const myitems =JSON.parse(localStorage.getItem(''))
     // console.log(myitems)
@@ -68,7 +70,7 @@ const Cart = () => {
        <div className=' shadow-xl h-full px-2 py-3 w-full '>
           <h2 className='font-bold text-2xl'>My Cart</h2>
           <div>
-            {
+            {Cartcont.cartitems.length ===0 ? <h1 className='text-[15px] text-center font-bold align-middle mt-5'>Your Cart is empty</h1> :
               Cartcont.cartitems.map((cartitem) =>{
                 return(
                   <Card>
@@ -79,6 +81,9 @@ const Cart = () => {
                                 <img src={cartitem.image} alt="" className='w-10 mx-10'/>
                                 <p>{cartitem.item} ~ ($ {cartitem.price}) </p>
                             </div> 
+                            <div className='text-right px-3 pt-2'>
+                               <button className='font-bold' onClick={()=> removeItem(cartitem.id)} >X</button>
+                            </div>
                         </li>
                       </ul>
                     </div>
@@ -90,15 +95,100 @@ const Cart = () => {
           <div className='mt-[100px] '>
             <p className='text-2xl flex '>Total :  <span className='ml-[100px] font-bold'>$ {TotalPrice(array)}</span> </p>
           </div>
-          <button>
-                  <div className='border border-1 border-slate-700 sm:pl-2  w-full px-[150px] md:px-[300px]  h-[70px] mt-10 text-lg pt-6'>
-                          <p className='text-center sm:ml-[150px] '> Checkout</p>
+          <button className='flex justify-center w-full' onClick={(e)=> Cartcont.cartitems.length ===0  ? swal("Empty Cart", "Add item to the cart!", "error"): setOpenModal(true) }>
+                  <div className='border border-1 border-slate-700 sm:pl-2  w-full flex justify-center  h-[70px] mt-10 text-lg pt-6'>
+                          <p className='text-center '> Checkout</p>
                   </div>
           </button>
         </div> 
+
+
+        <PaymentModal  open={openModal} close={()=>setOpenModal(!openModal)} payableamount={TotalPrice(array)}/>
+
     
     </div>
   )
 }
 
 export default Cart
+
+
+
+const PaymentModal = ({open,close,payableamount}) => {
+  const [email, setEmail] = useState("");
+  const [amount] = useState(payableamount);
+  const [firstname, setFirstname]= useState("");
+  const [lastname,setLastname] = useState("")
+
+  const PaywithPaystack = (e)=>{
+    
+    e.preventDefault();
+    const paystack = new PaystackPop();
+
+    paystack.newTransaction({
+      key:"pk_live_dce275894c6952273b938d73440b1521f4edbf3a",
+      amount:amount,
+      email,
+      firstname,
+      lastname,
+      onSuccess(transaction){
+        let message = `Payment Completed ${transaction.reference}`
+        alert(message);
+        window.location.reload();
+      },
+      onCancel(){
+        alert('You cancelled this transaction')
+      }
+    })
+  }
+
+  if(!open) return null
+
+    
+  
+  
+  return (
+
+    <div className="   bg-[rgba(68,85,109,0.4)] fixed inset-0 z-50   ">
+  
+    <div className="flex h-screen justify-center items-center opacity-100">
+
+        <div className="flex-col justify-center absolute opacity-100  bg-white py-4 px-4 w-[300px]  md:w-[500px]  rounded-lg ">
+
+            <div className="flex  text-lg  text-zinc-600 justify-between  mb-7 border-b py-2 border-b-slate-100"  >
+              <p className='text-xl font-bold '>Enter Payment Details</p>
+              <p onClick={close} className=' cursor-pointer text-slate-400 font-bold '>x</p>
+            </div>
+
+            <div className='title text-left'>
+               <p className='font-bold text-[14px]'>Email</p>
+                <input type="text" name="" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder={"Email"} className='outline-none  text-[14px] border-[2.5px] h-9 px-2 mt-2 w-[250px] md:w-[450px] border-slate-400' />
+            </div>
+
+            <div className='title text-left'>
+               <p className='font-bold text-[14px]'>Amount</p>
+               <input type="text" name="" id=""disabled value={amount} placeholder={payableamount} className='outline-none  text-[14px] border-[2.5px] h-9 px-2 mt-2 w-[250px] md:w-[450px] border-slate-400' />
+            </div>
+
+            <div className='title text-left'>
+               <p className='font-bold text-[14px]'>Firstname</p>
+                <input type="text" name="" value={firstname} onChange={(e)=> setFirstname(e.target.value)} placeholder={"Email"} className='outline-none  text-[14px] border-[2.5px] h-9 px-2 mt-2 w-[250px] md:w-[450px] border-slate-400' />
+            </div>
+
+            <div className='title text-left'>
+               <p className='font-bold text-[14px]'>Lastname</p>
+                <input type="text" name="" value={lastname} onChange={(e)=> setLastname(e.target.value)} placeholder={"Email"} className='outline-none  text-[14px] border-[2.5px] h-9 px-2 mt-2 w-[250px] md:w-[450px] border-slate-400' />
+            </div>
+
+
+            <div className='flex justify-center mt-4'>
+                <button onClick={PaywithPaystack} className={'bg-white border-[1px] border-slate-900 px-[10px] pt-[7px] pb-[16px] w-[220px]  rounded-md h-[40px]  '}><p className=''>Pay</p></button>
+            </div>
+      
+
+        </div>
+    </div>
+</div>
+
+  )
+}
