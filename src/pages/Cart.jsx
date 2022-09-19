@@ -127,17 +127,17 @@ const PaymentModal = ({open,close,payableamount}) => {
 
     paystack.newTransaction({
       key:"pk_live_dce275894c6952273b938d73440b1521f4edbf3a",
-      amount:amount,
+      amount:amount*100,
       email,
       firstname,
       lastname,
       onSuccess(transaction){
         let message = `Payment Completed ${transaction.reference}`
-        alert(message);
+        swal("Transaction succesful",message,"success");
         window.location.reload();
       },
       onCancel(){
-        alert('You cancelled this transaction')
+        swal('You cancelled this transaction',"Transaction cancelled","warning")
       }
     })
   }
