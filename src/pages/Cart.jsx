@@ -172,12 +172,12 @@ const PaymentModal = ({open,close,payableamount}) => {
 
             <div className='title text-left'>
                <p className='font-bold text-[14px]'>Firstname</p>
-                <input type="text" name="" value={firstname} onChange={(e)=> setFirstname(e.target.value)} placeholder={"Email"} className='outline-none  text-[14px] border-[2.5px] h-9 px-2 mt-2 w-[250px] md:w-[450px] border-slate-400' />
+                <input type="text" name="" value={firstname} onChange={(e)=> setFirstname(e.target.value)} placeholder={"Firstname"} className='outline-none  text-[14px] border-[2.5px] h-9 px-2 mt-2 w-[250px] md:w-[450px] border-slate-400' />
             </div>
 
             <div className='title text-left'>
                <p className='font-bold text-[14px]'>Lastname</p>
-                <input type="text" name="" value={lastname} onChange={(e)=> setLastname(e.target.value)} placeholder={"Email"} className='outline-none  text-[14px] border-[2.5px] h-9 px-2 mt-2 w-[250px] md:w-[450px] border-slate-400' />
+                <input type="text" name="" value={lastname} onChange={(e)=> setLastname(e.target.value)} placeholder={"Lastname"} className='outline-none  text-[14px] border-[2.5px] h-9 px-2 mt-2 w-[250px] md:w-[450px] border-slate-400' />
             </div>
 
 
