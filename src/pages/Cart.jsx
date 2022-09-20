@@ -166,7 +166,7 @@ const PaymentModal = ({open,close,payableamount}) => {
             </div>
 
             <div className='title text-left'>
-               <p className='font-bold text-[14px]'>Amount</p>
+               <p className='font-bold text-[14px]'>Amount Payable</p>
                <input type="text" name="" id=""disabled value={amount} placeholder={payableamount} className='outline-none  text-[14px] border-[2.5px] h-9 px-2 mt-2 w-[250px] md:w-[450px] border-slate-400' />
             </div>
 
